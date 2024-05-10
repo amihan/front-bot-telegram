@@ -1,21 +1,14 @@
-import { Link, useMatch } from 'react-router-dom';
+import {NavLink } from 'react-router-dom';
 
 const CustomLink = ({children, to, ...props}) => {
-    const match = useMatch({
-        path: to,
-        end: to.length === 1,
-    });
-
     return (
-        <Link
+        <NavLink
             to={to}
-            style={{
-                color: match ? 'var(--color-active)' : 'white',
-            }}
+            className={({isActive}) => isActive ? 'active-link link' : 'link'}
             {...props}
         >
             {children}
-        </Link>
+        </NavLink>
     )
 }
 

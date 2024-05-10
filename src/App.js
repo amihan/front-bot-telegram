@@ -5,12 +5,12 @@ import { useTelegram } from './hooks/useTelegram';
 import { Route, Routes } from 'react-router-dom';
 import { Layout } from './components/Layout';
 import EditAdvertisement from './components/EditAdvertisement';
-import CreateAdvertisement from './components/CreateAdvertisement copy';
+import CreateAdvertisement from './components/CreateAdvertisement';
 
 
 function App() {
 
-  const { tg } = useTelegram();
+  const { tg, onClose } = useTelegram();
 
   useEffect(() => {
     tg.ready();
@@ -19,6 +19,7 @@ function App() {
 
   return (
     <div className="App">
+    <button onClick={onClose}>Закрыть приложение</button>
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<CreateAdvertisement/>} />

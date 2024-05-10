@@ -12,11 +12,12 @@ const NavLinkButton = styled(NavLink)(({ theme }) => ({
     padding: '8px 16px',
     fontSize: '18px',
     borderRadius: '4px',
-    color: '#000000',
+    color: 'var(--tg-theme-button-color)',
     backgroundColor: '#FFF8DC',
     transition: 'background-color 0.3s, color 0.3s',
     '&.active': {
         backgroundColor: '#CD853F',
+        color: '#FFFFFF', 
     },
 }));
 

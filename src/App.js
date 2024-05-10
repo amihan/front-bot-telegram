@@ -14,12 +14,12 @@ function App() {
 
   useEffect(() => {
     tg.ready();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
 
   return (
-    <div className="App">
-    <button onClick={onClose}>Закрыть приложение</button>
+    <div>
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<CreateAdvertisement/>} />

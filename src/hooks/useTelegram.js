@@ -14,11 +14,27 @@ export function useTelegram() {
     //     }
     // }
 
+
+
+
+    // if (tg.initDataUnsafe?.user?.channels) {
+    //     const channels = tg.initDataUnsafe?.user?.channels;
+        
+        
+    //     channels.forEach(channel => {
+    //         console.log('ID канала:', channel.id);
+    //         console.log('Название канала:', channel.title);
+    //         console.log('Тип канала:', channel.type);
+    //     });
+    // } 
+
+
     return {
         onClose,
         // onToggleButton,
         tg,
         user: tg.initDataUnsafe?.user,
         queryId: tg.initDataUnsafe?.query_id,
+        channels: tg.initDataUnsafe?.user?.channels
     }
 }
